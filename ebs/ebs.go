@@ -408,7 +408,7 @@ func (d *Driver) CreateVolume(req Request) error {
 
 	// We don't format existing or snapshot restored volume
 	if format {
-		if _, err := util.Execute("mkfs", []string{"-t", "ext4", dev}); err != nil {
+		if _, err := util.Execute("mkfs", []string{"-t", "xfs", dev}); err != nil {
 			return err
 		}
 	}
